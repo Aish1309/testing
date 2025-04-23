@@ -27,9 +27,9 @@
 
 // export { auth, database, storage };
 
-// // src/firebase.js
+// src/firebase.js
 
-// // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 // import { initializeApp } from 'firebase/app';
 // import { getAuth, setPersistence, inMemoryPersistence } from 'firebase/auth';
 // import { getDatabase } from 'firebase/database'; // Use getDatabase for Realtime Database
@@ -81,7 +81,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
-// const database = getDatabase(app);
+const database = getDatabase(app);
 const storage = getStorage(app);
 
 // Set persistence to localStorage
@@ -94,5 +94,50 @@ setPersistence(auth, browserLocalPersistence)
   });
 
 export { auth, 
-  // database, 
+  database, 
   storage };
+
+// import { initializeApp } from 'firebase/app';
+// import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth';
+// import { getDatabase, ref, set } from 'firebase/database';
+// import { getStorage } from 'firebase/storage';
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCqL7lnooyjmNGAOB5nc4yZcb6FKu8e-2A",
+//   authDomain: "trafyai-loginsignup.firebaseapp.com",
+//   projectId: "trafyai-loginsignup",
+//   storageBucket: "trafyai-loginsignup.appspot.com",
+//   messagingSenderId: "344792634329",
+//   appId: "1:344792634329:web:d343ac2461dd2a731dffc8",
+//   databaseURL: "https://trafyai-loginsignup-default-rtdb.firebaseio.com"
+// };
+
+// const app = initializeApp(firebaseConfig);
+
+// const auth = getAuth(app);
+// let database;
+// const storage = getStorage(app);
+
+// // 🧪 Defensive DB init
+// try {
+//   database = getDatabase(app);
+//   set(ref(database, 'debug/connectionTest'), {
+//     status: 'connected',
+//     timestamp: Date.now(),
+//   })
+//   .then(() => console.log("✅ Firebase DB write successful"))
+//   .catch((err) => console.error("❌ Firebase DB write failed:", err));
+// } catch (err) {
+//   console.error("🔥 getDatabase(app) failed:", err);
+// }
+
+// // Auth persistence
+// setPersistence(auth, browserLocalPersistence)
+//   .then(() => {
+//     console.log("✅ Persistence set to browserLocalPersistence");
+//   })
+//   .catch((error) => {
+//     console.error("❌ Error setting persistence:", error);
+//   });
+
+// export { auth, database, storage };
