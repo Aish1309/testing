@@ -4,8 +4,8 @@ import "@styles/globals.css";
 import Header from "@components/common/header/Header.jsx";
 import Footer from "@components/common/footer/Footer";
 import imageO from "../app/opengraph-image.png";
-import { AuthContextProvider } from "@context/AuthContext";
-import { CourseContextProvider } from "@context/CourseContext";
+// import { AuthContextProvider } from "@context/AuthContext";
+// import { CourseContextProvider } from "@context/CourseContext";
 import Script from "next/script";
 
 export const metadata = {
@@ -52,15 +52,15 @@ export default function RootLayout({ children }) {
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
-        <AuthContextProvider>
-          <CourseContextProvider>
+        {/* <AuthContextProvider>
+          <CourseContextProvider> */}
             <main className="app">
-              <Header />
+              {/* <Header /> */}
               {children}
               <Footer />
             </main>
-          </CourseContextProvider>
-        </AuthContextProvider>
+          {/* </CourseContextProvider>
+        </AuthContextProvider> */}
       </body>
     </html>
   );

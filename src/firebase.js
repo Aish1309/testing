@@ -81,7 +81,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
-const database = getDatabase(app);
+// const database = getDatabase(app);
 const storage = getStorage(app);
 
 // Set persistence to localStorage
@@ -94,7 +94,7 @@ setPersistence(auth, browserLocalPersistence)
   });
 
 export { auth, 
-  database, 
+  // database, 
   storage };
 
 // import { initializeApp } from 'firebase/app';
